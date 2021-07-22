@@ -8,11 +8,13 @@
 import UIKit
 
 class BurgerTableViewCell: UITableViewCell {
+    var BurgerViewModel : BurgerViewModel?
     var Burger : BurgerElement? {
         didSet {
             self.nameBurger.text = self.Burger?.title
             self.imageBurger.downloaded(from: Burger?.thumbnail ?? "")
             self.DescriptionBurger.text = self.Burger?.burgerDescription
+            self.PriceBurger.text = String(round(Burger!.price) / 100) + "€"
         }
     }
     let newContentView : UIView = {

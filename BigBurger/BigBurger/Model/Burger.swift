@@ -9,7 +9,7 @@ import Foundation
 class BurgerElement: Decodable {
     let ref, title, burgerDescription: String
     let thumbnail: String
-    let price: Int
+    let price: Float
 
     enum CodingKeys: String, CodingKey {
         case ref, title
@@ -17,7 +17,7 @@ class BurgerElement: Decodable {
         case thumbnail, price
     }
 
-    init(ref: String, title: String, burgerDescription: String, thumbnail: String, price: Int) {
+    init(ref: String, title: String, burgerDescription: String, thumbnail: String, price: Float) {
         self.ref = ref
         self.title = title
         self.burgerDescription = burgerDescription

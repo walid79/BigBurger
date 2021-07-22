@@ -43,4 +43,11 @@ extension BurgerViewModel {
         }
         return nil
     }
+   func roundPrice()->String{
+        for i in listBurger {
+            let roundedVal = round(i.price * 1000) / 1000
+            return String(roundedVal)
+        }
+    return ""
+    }
 }
