@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		44C3796F26A98E76004A1D7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3796E26A98E76004A1D7C /* AppDelegate.swift */; };
 		44C3797126A98E76004A1D7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3797026A98E76004A1D7C /* SceneDelegate.swift */; };
-		44C3797326A98E76004A1D7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3797226A98E76004A1D7C /* ViewController.swift */; };
-		44C3797626A98E76004A1D7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C3797426A98E76004A1D7C /* Main.storyboard */; };
 		44C3797826A98E7C004A1D7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44C3797726A98E7C004A1D7C /* Assets.xcassets */; };
 		44C3797B26A98E7C004A1D7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C3797926A98E7C004A1D7C /* LaunchScreen.storyboard */; };
 		44C3798626A98E7E004A1D7C /* BigBurgerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3798526A98E7E004A1D7C /* BigBurgerTests.swift */; };
 		44C3799126A98E7E004A1D7C /* BigBurgerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3799026A98E7E004A1D7C /* BigBurgerUITests.swift */; };
+		44C379A026A994B1004A1D7C /* BurgerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3799F26A994B1004A1D7C /* BurgerListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +37,6 @@
 		44C3796B26A98E76004A1D7C /* BigBurger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigBurger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C3796E26A98E76004A1D7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C3797026A98E76004A1D7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44C3797226A98E76004A1D7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		44C3797526A98E76004A1D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44C3797726A98E7C004A1D7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44C3797A26A98E7C004A1D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44C3797C26A98E7C004A1D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +46,7 @@
 		44C3798C26A98E7E004A1D7C /* BigBurgerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigBurgerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C3799026A98E7E004A1D7C /* BigBurgerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBurgerUITests.swift; sourceTree = "<group>"; };
 		44C3799226A98E7E004A1D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44C3799F26A994B1004A1D7C /* BurgerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +97,9 @@
 		44C3796D26A98E76004A1D7C /* BigBurger */ = {
 			isa = PBXGroup;
 			children = (
+				44C3799E26A9948C004A1D7C /* ViewController */,
 				44C3796E26A98E76004A1D7C /* AppDelegate.swift */,
 				44C3797026A98E76004A1D7C /* SceneDelegate.swift */,
-				44C3797226A98E76004A1D7C /* ViewController.swift */,
-				44C3797426A98E76004A1D7C /* Main.storyboard */,
 				44C3797726A98E7C004A1D7C /* Assets.xcassets */,
 				44C3797926A98E7C004A1D7C /* LaunchScreen.storyboard */,
 				44C3797C26A98E7C004A1D7C /* Info.plist */,
@@ -126,6 +123,14 @@
 				44C3799226A98E7E004A1D7C /* Info.plist */,
 			);
 			path = BigBurgerUITests;
+			sourceTree = "<group>";
+		};
+		44C3799E26A9948C004A1D7C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44C3799F26A994B1004A1D7C /* BurgerListViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +238,6 @@
 			files = (
 				44C3797B26A98E7C004A1D7C /* LaunchScreen.storyboard in Resources */,
 				44C3797826A98E7C004A1D7C /* Assets.xcassets in Resources */,
-				44C3797626A98E76004A1D7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C3797326A98E76004A1D7C /* ViewController.swift in Sources */,
+				44C379A026A994B1004A1D7C /* BurgerListViewController.swift in Sources */,
 				44C3796F26A98E76004A1D7C /* AppDelegate.swift in Sources */,
 				44C3797126A98E76004A1D7C /* SceneDelegate.swift in Sources */,
 			);
@@ -296,14 +300,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		44C3797426A98E76004A1D7C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44C3797526A98E76004A1D7C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		44C3797926A98E7C004A1D7C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
