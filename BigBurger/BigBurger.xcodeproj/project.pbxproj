@@ -14,6 +14,14 @@
 		44C3798626A98E7E004A1D7C /* BigBurgerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3798526A98E7E004A1D7C /* BigBurgerTests.swift */; };
 		44C3799126A98E7E004A1D7C /* BigBurgerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3799026A98E7E004A1D7C /* BigBurgerUITests.swift */; };
 		44C379A026A994B1004A1D7C /* BurgerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3799F26A994B1004A1D7C /* BurgerListViewController.swift */; };
+		44C379A326A99ABB004A1D7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C379A226A99ABA004A1D7C /* Constant.swift */; };
+		44C379A626A99D45004A1D7C /* BurgerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C379A526A99D45004A1D7C /* BurgerTableViewCell.swift */; };
+		44C379A826A9A9F7004A1D7C /* ExtensionUimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C379A726A9A9F7004A1D7C /* ExtensionUimage.swift */; };
+		44C379AB26A9B76E004A1D7C /* Burger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C379AA26A9B76E004A1D7C /* Burger.swift */; };
+		44C379B226A9B858004A1D7C /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C379B126A9B858004A1D7C /* RestApiManager.swift */; };
+		44C379B426A9B8C0004A1D7C /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C379B326A9B8C0004A1D7C /* ParserHelper.swift */; };
+		44C379B626A9B901004A1D7C /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C379B526A9B901004A1D7C /* ErrorResult.swift */; };
+		44C379B826A9B929004A1D7C /* BurgerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C379B726A9B929004A1D7C /* BurgerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		44C3799026A98E7E004A1D7C /* BigBurgerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBurgerUITests.swift; sourceTree = "<group>"; };
 		44C3799226A98E7E004A1D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44C3799F26A994B1004A1D7C /* BurgerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerListViewController.swift; sourceTree = "<group>"; };
+		44C379A226A99ABA004A1D7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		44C379A526A99D45004A1D7C /* BurgerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerTableViewCell.swift; sourceTree = "<group>"; };
+		44C379A726A9A9F7004A1D7C /* ExtensionUimage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUimage.swift; sourceTree = "<group>"; };
+		44C379AA26A9B76E004A1D7C /* Burger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burger.swift; sourceTree = "<group>"; };
+		44C379B126A9B858004A1D7C /* RestApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
+		44C379B326A9B8C0004A1D7C /* ParserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
+		44C379B526A9B901004A1D7C /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
+		44C379B726A9B929004A1D7C /* BurgerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +113,11 @@
 		44C3796D26A98E76004A1D7C /* BigBurger */ = {
 			isa = PBXGroup;
 			children = (
+				44C379B926A9B99B004A1D7C /* ViewModel */,
+				44C379AC26A9B7F5004A1D7C /* Network */,
+				44C379A926A9B75D004A1D7C /* Model */,
+				44C379A126A99AA7004A1D7C /* Helper */,
+				44C379A426A99D25004A1D7C /* Cell */,
 				44C3799E26A9948C004A1D7C /* ViewController */,
 				44C3796E26A98E76004A1D7C /* AppDelegate.swift */,
 				44C3797026A98E76004A1D7C /* SceneDelegate.swift */,
@@ -131,6 +152,81 @@
 				44C3799F26A994B1004A1D7C /* BurgerListViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		44C379A126A99AA7004A1D7C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				44C379A226A99ABA004A1D7C /* Constant.swift */,
+				44C379A726A9A9F7004A1D7C /* ExtensionUimage.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		44C379A426A99D25004A1D7C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				44C379A526A99D45004A1D7C /* BurgerTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		44C379A926A9B75D004A1D7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				44C379AA26A9B76E004A1D7C /* Burger.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44C379AC26A9B7F5004A1D7C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				44C379B026A9B835004A1D7C /* Manger */,
+				44C379AF26A9B818004A1D7C /* Error */,
+				44C379AE26A9B80F004A1D7C /* Parser */,
+				44C379AD26A9B800004A1D7C /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		44C379AD26A9B800004A1D7C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				44C379B726A9B929004A1D7C /* BurgerService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		44C379AE26A9B80F004A1D7C /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				44C379B326A9B8C0004A1D7C /* ParserHelper.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		44C379AF26A9B818004A1D7C /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				44C379B526A9B901004A1D7C /* ErrorResult.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		44C379B026A9B835004A1D7C /* Manger */ = {
+			isa = PBXGroup;
+			children = (
+				44C379B126A9B858004A1D7C /* RestApiManager.swift */,
+			);
+			path = Manger;
+			sourceTree = "<group>";
+		};
+		44C379B926A9B99B004A1D7C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +358,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C379AB26A9B76E004A1D7C /* Burger.swift in Sources */,
+				44C379B626A9B901004A1D7C /* ErrorResult.swift in Sources */,
 				44C379A026A994B1004A1D7C /* BurgerListViewController.swift in Sources */,
+				44C379B426A9B8C0004A1D7C /* ParserHelper.swift in Sources */,
+				44C379B226A9B858004A1D7C /* RestApiManager.swift in Sources */,
+				44C379A626A99D45004A1D7C /* BurgerTableViewCell.swift in Sources */,
 				44C3796F26A98E76004A1D7C /* AppDelegate.swift in Sources */,
 				44C3797126A98E76004A1D7C /* SceneDelegate.swift in Sources */,
+				44C379A326A99ABB004A1D7C /* Constant.swift in Sources */,
+				44C379B826A9B929004A1D7C /* BurgerService.swift in Sources */,
+				44C379A826A9A9F7004A1D7C /* ExtensionUimage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
