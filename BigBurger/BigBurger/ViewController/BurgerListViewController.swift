@@ -7,19 +7,23 @@
 
 import UIKit
 
-class BurgerListViewController: UIViewController {
+class BurgerListViewController: BaseViewController {
     let tableView : UITableView = {
            let t = UITableView()
            t.translatesAutoresizingMaskIntoConstraints = false
            return t
        }()
+    var ViewModelBurger = BurgerViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
         setupTableView()
         configConstriant()
         setUpNavigation()
-       
+      
+        closureSetup()
+        getAnnoncesList()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -46,18 +50,56 @@ class BurgerListViewController: UIViewController {
         self.tableView.dataSource = self
         tableView.register(BurgerTableViewCell.self, forCellReuseIdentifier: "cell")
     }
+ func tableViewReload() {
+        removeActivityIndicator()
+        tableView.reloadData()
+    }
+    func closureSetup() {
+        // add error handling
+        ViewModelBurger.onErrorHandling = { [weak self] error in
+            DispatchQueue.main.async {
+                self?.removeActivityIndicator()
+                switch error {
+                case .custom(let message):
+                    self?.displayAlert(message: message)
+                    break
+                default:
+                    self?.displayAlert(message: error?.localizedDescription ?? "Error")
+                    break
+                }
+            }
+            }
+        
+        //refresh screen
+        ViewModelBurger.onRefreshHandling = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableViewReload()
+            }
+        }
+    }
+  func getAnnoncesList(){
+        self.displayActivityIndicator(onView: self.view)
+    
+        ViewModelBurger.getlistBurger()
+}
 }
 extension BurgerListViewController : UITableViewDelegate ,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 20
+        return ViewModelBurger.numberOfBurger()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! BurgerTableViewCell
+        let burger = ViewModelBurger.BurgerIndex(at: indexPath.row)
+    
+         cell.Burger = burger
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 270
     }
+    
+}
+extension BurgerListViewController {
     
 }

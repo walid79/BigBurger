@@ -8,7 +8,13 @@
 import UIKit
 
 class BurgerTableViewCell: UITableViewCell {
-    
+    var Burger : BurgerElement? {
+        didSet {
+            self.nameBurger.text = self.Burger?.title
+            self.imageBurger.downloaded(from: Burger?.thumbnail ?? "")
+            self.DescriptionBurger.text = self.Burger?.burgerDescription
+        }
+    }
     let newContentView : UIView = {
         let V = UIView()
         V.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +25,7 @@ class BurgerTableViewCell: UITableViewCell {
         let img = UIImageView()
         img.image = UIImage(named: "imageburger" )
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.contentMode = .scaleAspectFit
+        img.contentMode = .scaleToFill
         return img
     }()
     private let nameBurger : UILabel = {
@@ -46,7 +52,7 @@ class BurgerTableViewCell: UITableViewCell {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = CommonConstant.blackColor
-        lbl.font = UIFont.boldSystemFont(ofSize: 14)
+        lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.textAlignment = .left
         lbl.text = "jkjkgjkgjkgjkjgkjkgjkggkjgjkgjkjg"
         lbl.numberOfLines = 0

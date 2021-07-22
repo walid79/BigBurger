@@ -33,7 +33,7 @@ struct RequestModel {
     let url: String?
     var httpMethod: HTTPMethod = .GET
 }
-class RestApiManager
+class RestApiManager 
 {
 
     static let sharedInstance = RestApiManager()
