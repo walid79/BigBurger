@@ -13,7 +13,9 @@ class BurgerListViewController: BaseViewController {
            t.translatesAutoresizingMaskIntoConstraints = false
            return t
        }()
+    var listBurgerOrder = [BurgerElement]()
     var ViewModelBurger = BurgerViewModel()
+    var price = Float()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
@@ -43,7 +45,16 @@ class BurgerListViewController: BaseViewController {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: CommonConstant.blackColor]
         navigationItem.hidesSearchBarWhenScrolling = false
         view.backgroundColor = .white
-     
+        let submitItem  = UIBarButtonItem(title: "Ma commande", style: .plain, target: self, action: #selector(SubmitButtonTouched))
+        submitItem.tintColor = .black
+        submitItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 14)!], for: .normal)
+        self.navigationItem.rightBarButtonItem = submitItem
+       
+    }
+    @objc func SubmitButtonTouched(){
+        let vc = ListOrderViewController()
+        vc.totalPriceOrder = String(format: "%.2f", price)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     func setupTableView(){
         self.tableView.delegate = self
@@ -91,16 +102,26 @@ extension BurgerListViewController : UITableViewDelegate ,UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! BurgerTableViewCell
         let burger = ViewModelBurger.BurgerIndex(at: indexPath.row)
-        
-         cell.Burger = burger
+        cell.index = indexPath
+        cell.delegate = self
+        cell.Burger = burger
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 270
+        return 300
     }
     
 }
-extension BurgerListViewController {
+extension BurgerListViewController : BurgerCell {
+    func addOrder(index: Int) {
+       
+        let burgerOrder = ViewModelBurger.BurgerIndex(at: index)
+        price = price + round( burgerOrder!.price) / 100
+     
+        print(String(format: "%.2f", price) )
+        
+    }
+    
     
 }
