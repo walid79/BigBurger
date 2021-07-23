@@ -5,4 +5,4 @@
 # Enum d'erreur
 # Création des interfaces avec autolayout directement dans le code
 # Développement en Swift
-# Le projet doit être compatible pour iOS 12+
+# Le projet compatible pour iOS 12+
